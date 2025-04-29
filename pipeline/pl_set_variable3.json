@@ -1,0 +1,56 @@
+{
+	"name": "pl_set_variable3",
+	"properties": {
+		"description": "Take parameter as Full and split it into first name and last name variable",
+		"activities": [
+			{
+				"name": "act_first_name",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "first_name",
+					"value": {
+						"value": "@split(pipeline().parameters.Name,' ')[0]",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "act_last_name",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "last_name",
+					"value": {
+						"value": "@split(pipeline().parameters.Name,' ')[1]",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"Name": {
+				"type": "string"
+			}
+		},
+		"variables": {
+			"first_name": {
+				"type": "String"
+			},
+			"last_name": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}

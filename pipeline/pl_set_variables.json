@@ -1,0 +1,51 @@
+{
+	"name": "pl_set_variables",
+	"properties": {
+		"description": "Create 2 set variables",
+		"activities": [
+			{
+				"name": "act_first_name",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "first_name",
+					"value": "Mayur"
+				}
+			},
+			{
+				"name": "act_last_name",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "last_name",
+					"value": "Borude"
+				}
+			}
+		],
+		"variables": {
+			"first_name": {
+				"type": "String"
+			},
+			"last_name": {
+				"type": "String"
+			},
+			"Name": {
+				"type": "String"
+			},
+			"First_name": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}

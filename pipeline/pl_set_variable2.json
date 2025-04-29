@@ -1,0 +1,43 @@
+{
+	"name": "pl_set_variable2",
+	"properties": {
+		"description": "Set pipeline parameter value to variable",
+		"activities": [
+			{
+				"name": "act_variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "First_name",
+					"value": {
+						"value": "@pipeline().parameters.name",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"parameters": {
+			"name": {
+				"type": "string",
+				"defaultValue": "Nikhil"
+			}
+		},
+		"variables": {
+			"First_name": {
+				"type": "String"
+			},
+			"first_name": {
+				"type": "String"
+			},
+			"last_name": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}

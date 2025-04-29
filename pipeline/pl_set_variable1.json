@@ -1,0 +1,54 @@
+{
+	"name": "pl_set_variable1",
+	"properties": {
+		"description": "Set the value of variable 1 to variable 2",
+		"activities": [
+			{
+				"name": "act_variable1",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "Name",
+					"value": "Ram"
+				}
+			},
+			{
+				"name": "act_variable2",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "first_name",
+					"value": {
+						"value": "@variables('Name')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"Name": {
+				"type": "String"
+			},
+			"first_name": {
+				"type": "String"
+			},
+			"First_name": {
+				"type": "String"
+			},
+			"last_name": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
